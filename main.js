@@ -44,13 +44,18 @@ prevImageBtn.click(function() {
 });
 
 bulletBtn.click(function(){
+  // run this function only if user click on a non-active bullet
   if($(this).hasClass("active") == false) {
+    // get active img from the document
     activeImg = $(".images .active");
     activeImg.removeClass("active");
+    // get active bullet from the document
     activeBullet = $(".nav .fa-circle.active");
     activeBullet.removeClass("active");
+    // add .active class to the chosen bullet
     $(this).addClass("active");
     switch ($(this).index()) {
+      // add the .active class to the corresponding immage
       case 0:
         $(".images .first").addClass("active");
         break;
