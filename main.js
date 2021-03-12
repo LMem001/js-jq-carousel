@@ -50,12 +50,6 @@ bulletBtn.click(function(){
     activeBullet = $(".nav .fa-circle.active");
     activeBullet.removeClass("active");
     $(this).addClass("active");
-    // if($(this).hasClass("first")) {
-    //   $(".images .first").addClass("active");
-    // }
-    // if($(this).index() == 0) {
-    //   alert("2");
-    // }
     switch ($(this).index()) {
       case 0:
         $(".images .first").addClass("active");
