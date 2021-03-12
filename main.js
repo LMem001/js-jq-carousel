@@ -8,10 +8,12 @@ var bulletNav = $(".slider-wrapper .nav");
 // generate bullets
 var i = 0;
 while(i < imgTotal) {
-  // bulletNav.append("i").addClass("test");
+  // create the a number of bullet equal to the number of images in the carosel
   if(i == 0) {
+    // give the .first class to the firs bullet
     $('<i></i>').addClass('fas fa-circle active first').appendTo(bulletNav);
   } else if(i == imgTotal - 1) {
+    // give the .last class to the last bullet
     $('<i></i>').addClass('fas fa-circle last').appendTo(bulletNav);
   } else {
     $('<i></i>').addClass('fas fa-circle').appendTo(bulletNav);
@@ -73,19 +75,9 @@ bulletBtn.click(function(){
     activeBullet.removeClass("active");
     // add .active class to the chosen bullet
     $(this).addClass("active");
-    switch ($(this).index()) {
-      // add the .active class to the corresponding image
-      case 0:
-        $(".images .first").addClass("active");
-        break;
-      case 1:
-        $(".images img:nth-child(2)").addClass("active");
-        break;
-      case 2:
-        $(".images img:nth-child(3)").addClass("active");
-        break;
-      default:
-        $(".images .last").addClass("active");
-    }
+    // create a string to get the nth child
+    var getImage = ".images img:nth-child(" + ($(this).index() + 1) + ")";
+    // add the .active class to the nth child
+    $(getImage).addClass("active");
   }
 });
