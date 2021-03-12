@@ -61,10 +61,10 @@ bulletBtn.click(function(){
         $(".images .first").addClass("active");
         break;
       case 1:
-        alert(1);
+        $(".images img:nth-child(2)").addClass("active");
         break;
       case 2:
-        alert(2);
+        $(".images img:nth-child(3)").addClass("active");
         break;
       default:
         $(".images .last").addClass("active");
