@@ -1,6 +1,7 @@
 // link variables to html document's classes
 var nextImageBtn = $(".slider-wrapper .fas.fa-angle-right");
 var prevImageBtn = $(".slider-wrapper .fas.fa-angle-left");
+var bulletBtn = $(".nav .fa-circle ");
 
 nextImageBtn.click(function() {
   // the function show the user the next image in the carousel
@@ -40,4 +41,10 @@ prevImageBtn.click(function() {
     activeImg.prev().addClass("active");
     activeBullet.prev().addClass("active");
   }
+});
+
+bulletBtn.click(function(){
+  activeBullet = $(".nav .fa-circle.active");
+  activeBullet.removeClass("active");
+  $(this).addClass("active");
 });
