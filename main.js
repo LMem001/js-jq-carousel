@@ -44,7 +44,30 @@ prevImageBtn.click(function() {
 });
 
 bulletBtn.click(function(){
-  activeBullet = $(".nav .fa-circle.active");
-  activeBullet.removeClass("active");
-  $(this).addClass("active");
+  if($(this).hasClass("active") == false) {
+    activeImg = $(".images .active");
+    activeImg.removeClass("active");
+    activeBullet = $(".nav .fa-circle.active");
+    activeBullet.removeClass("active");
+    $(this).addClass("active");
+    // if($(this).hasClass("first")) {
+    //   $(".images .first").addClass("active");
+    // }
+    // if($(this).index() == 0) {
+    //   alert("2");
+    // }
+    switch ($(this).index()) {
+      case 0:
+        $(".images .first").addClass("active");
+        break;
+      case 1:
+        alert(1);
+        break;
+      case 2:
+        alert(2);
+        break;
+      default:
+        $(".images .last").addClass("active");
+    }
+  }
 });
