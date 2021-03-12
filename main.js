@@ -1,7 +1,26 @@
 // link variables to html document's classes
 var nextImageBtn = $(".slider-wrapper .fas.fa-angle-right");
 var prevImageBtn = $(".slider-wrapper .fas.fa-angle-left");
-var bulletBtn = $(".nav .fa-circle ");
+var imageList = $(".images img");
+var imgTotal = imageList.length;
+var bulletNav = $(".slider-wrapper .nav");
+
+// generate bullets
+var i = 0;
+while(i < imgTotal) {
+  // bulletNav.append("i").addClass("test");
+  if(i == 0) {
+    $('<i></i>').addClass('fas fa-circle active first').appendTo(bulletNav);
+  } else if(i == imgTotal - 1) {
+    $('<i></i>').addClass('fas fa-circle last').appendTo(bulletNav);
+  } else {
+    $('<i></i>').addClass('fas fa-circle').appendTo(bulletNav);
+  }
+  i++;
+}
+
+var bulletBtn = $(".nav .fa-circle");
+
 
 nextImageBtn.click(function() {
   // the function show the user the next image in the carousel
@@ -55,7 +74,7 @@ bulletBtn.click(function(){
     // add .active class to the chosen bullet
     $(this).addClass("active");
     switch ($(this).index()) {
-      // add the .active class to the corresponding immage
+      // add the .active class to the corresponding image
       case 0:
         $(".images .first").addClass("active");
         break;
