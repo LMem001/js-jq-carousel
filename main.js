@@ -23,8 +23,7 @@ while(i < imgTotal) {
 
 var bulletBtn = $(".nav .fa-circle");
 
-
-nextImageBtn.click(function() {
+function nextImage() {
   // the function show the user the next image in the carousel
   // get active img from the document
   activeImg = $(".images .active");
@@ -42,9 +41,9 @@ nextImageBtn.click(function() {
     activeImg.next().addClass("active");
     activeBullet.next().addClass("active");
   }
-});
+}
 
-prevImageBtn.click(function() {
+function prevImage() {
   // the function show the user the previous image in the carousel
   // get active img from the document
   activeImg = $(".images .active");
@@ -61,6 +60,31 @@ prevImageBtn.click(function() {
     // if not give the .active class to the previous elemts
     activeImg.prev().addClass("active");
     activeBullet.prev().addClass("active");
+  }
+}
+
+// methods to show the previous image on the carosel to the user
+// show next btn method
+nextImageBtn.click(function() {
+  nextImage();
+});
+
+// show next keyboard method
+$("body").keydown(function(e) {
+  if(e.keyCode == 39) {
+    nextImage();
+  }
+});
+
+// methods to show the previous image on the carosel to the user
+// show prev btn method
+prevImageBtn.click(function() {
+  prevImage();
+});
+// show next keyboard method
+$("body").keydown(function(e) {
+  if(e.keyCode == 37) {
+    prevImage();
   }
 });
 
