@@ -63,27 +63,21 @@ function prevImage() {
   }
 }
 
-// methods to show the previous image on the carosel to the user
 // show next btn method
 nextImageBtn.click(function() {
   nextImage();
 });
 
-// show next keyboard method
-$("body").keydown(function(e) {
-  if(e.keyCode == 39) {
-    nextImage();
-  }
-});
-
-// methods to show the previous image on the carosel to the user
 // show prev btn method
 prevImageBtn.click(function() {
   prevImage();
 });
-// show next keyboard method
+
+// show prev/next: keyboard method
 $("body").keydown(function(e) {
-  if(e.keyCode == 37) {
+  if(e.keyCode == 39) {
+    nextImage();
+  } else if(e.keyCode == 37) {
     prevImage();
   }
 });
